@@ -43,18 +43,30 @@ using namespace std;
 class Solution {
 public:
     bool canBeEqual(vector<int>& target, vector<int>& arr) {
-        unordered_map<int, int> map_target;
-        unordered_map<int, int> map_arr;
-        for (int i=0; i<target.size(); i++) {
-            map_target[target[i]]++;
-        }
-        for (int i=0; i<arr.size(); i++) {
-            map_arr[arr[i]]++;
-        }
-        if (map_target.size() != map_arr.size()) { return false; }
+        
+        // plan A
+        // unordered_map<int, int> map_target;
+        // unordered_map<int, int> map_arr;
+        // for (int i=0; i<target.size(); i++) {
+        //     map_target[target[i]]++;
+        // }
+        // for (int i=0; i<arr.size(); i++) {
+        //     map_arr[arr[i]]++;
+        // }
+        // if (map_target.size() != map_arr.size()) { return false; }
 
-        for (auto item : map_target) {
-            if (item.second != map_arr[item.first]) {
+        // for (auto item : map_target) {
+        //     if (item.second != map_arr[item.first]) {
+        //         return false;
+        //     }
+        // }
+        // return true;
+
+        // plan B
+        sort(target.begin(), target.end());
+        sort(arr.begin(), arr.end());
+        for (int i=0; i<target.size(); i++) {
+            if (target[i] != arr[i]) {
                 return false;
             }
         }
