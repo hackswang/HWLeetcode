@@ -43,6 +43,7 @@ s 和 goal 由小写英文字母组成
 class Solution {
 public:
     bool buddyStrings(string s, string goal) {
+        
         if (s.size() != goal.size()) { return false; }
 
         char ex_s = '0';
@@ -69,9 +70,8 @@ public:
                 unordered_set<char> cache(s.begin(), s.end());
                 return cache.size() < s.size();
             }
-        } else {
-            return (ex_s == '1' && ex_g == '1');
-        }
+        } 
+        return (ex_s == '1' && ex_g == '1');
     }
 };
 
