@@ -58,7 +58,7 @@ public:
         int start = nums[0];
         int end = nums[0];
         for (int i=1; i<=nums.size(); i++) {
-            if (nums[i] == end + 1 && i < nums.size()) {
+            if (i < nums.size() && nums[i] == end + 1) {
                 end++;
             } else {
                 if (start == end) {
@@ -66,8 +66,10 @@ public:
                 } else {
                     result.push_back(to_string(start) + "->" + to_string(end));
                 }
-                start = nums[i];
-                end = nums[i];
+                if (i < nums.size()) {
+                    start = nums[i];
+                    end = nums[i];
+                }
             }
         }
         return result;
