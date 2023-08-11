@@ -72,6 +72,10 @@ int main() {
         bool result = solution.isSubsequence("b", "c");
         cout << endl;
     }
+    {
+        bool result = solution.isSubsequence("", "c");
+        cout << endl;
+    }
     cout << "end";
 
     return 0;
