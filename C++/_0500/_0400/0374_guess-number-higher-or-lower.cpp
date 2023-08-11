@@ -63,18 +63,10 @@ public:
     int guessNumber(int n) {
         if (n==1) { return 1; }
 
-<<<<<<< Updated upstream
-        int head = 1;
-        int tail = n;
-
-        int guess_num;
-        int guess_result;
-=======
         long long head = 1;
         long long tail = n;
         long long guess_num;
         long long guess_result;
->>>>>>> Stashed changes
         while (head < tail)  {
             guess_num = (head + tail) / 2;
             guess_result = guess(guess_num);
